@@ -21,8 +21,10 @@ export default function Navbar({ onEnquireClick, scrollToContactForm }) {
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between h-24 relative">
         <div className="absolute -top-12 left-0 w-40 h-52 z-50">
           <div className="w-full h-full bg-white clip-polygon flex items-center justify-center shadow-lg">
-            <img src={Logo} alt="Swarnim Logo" className="h-24 w-auto" />
-          </div>
+    <a href="/" className="block">
+      <img src={Logo} alt="Swarnim Logo" className="h-24 w-auto cursor-pointer" />
+    </a>
+  </div>
         </div>
 
         <div className="w-44"></div>
