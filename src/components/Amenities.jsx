@@ -2,27 +2,27 @@ import React, { useState } from "react";
 
 const amenities = [
   {
-    image: "src/assets/aminities1.webp",
+    image: "src/assets/aminities1.png",
     title: "The Golden Ecosystem",
   },
   {
-    image: "src/assets/aminities2.webp",
+    image: "src/assets/aminities2.png",
     title: "The Golden Landmark",
   },
   {
-    image: "src/assets/aminties3.webp",
+    image: "src/assets/aminties3.png",
     title: "The Golden Drive",
   },
   {
-    image: "src/assets/aminities4.webp",
+    image: "src/assets/aminities4.png",
     title: "The Golden Address",
   },
   {
-    image: "src/assets/aminities5.webp",
+    image: "src/assets/aminities5.png",
     title: "The Golden Choice",
   },
   {
-    image: "src/assets/aminities6.webp",
+    image: "src/assets/aminities6.png",
     title: "The Golden Destination",
   },
 ];
