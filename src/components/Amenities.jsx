@@ -29,10 +29,18 @@ const amenities = [
 
 const AmenitiesSection = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [isTransitioning, setIsTransitioning] = useState(false);
 
   // Function to handle scroll
   const nextImage = () => {
+    if (isTransitioning) return; // Prevent multiple transitions at once
+
+    setIsTransitioning(true);
     setCurrentIndex((prevIndex) => (prevIndex + 1) % amenities.length);
+  };
+
+  const resetTransition = () => {
+    setIsTransitioning(false);
   };
 
   return (
@@ -49,6 +57,7 @@ const AmenitiesSection = () => {
           transform: `translateY(-${currentIndex * 100}vh)`, // Move images up based on index
           transition: "transform 1.5s ease-in-out", // Slower transition for smooth scrolling
         }}
+        onTransitionEnd={resetTransition} // Reset transition state after animation ends
       >
         {amenities.map((item, index) => (
           <div
