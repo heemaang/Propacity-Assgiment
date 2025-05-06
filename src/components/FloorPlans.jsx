@@ -4,7 +4,7 @@ import goldenFloor2Image from '../assets/floor2.png';
 
 const FloorCard = ({ src }) => {
   return (
-    <div className="overflow-hidden w-full max-w-[600px] mx-auto">
+    <div id="floor-plans" className="overflow-hidden w-full max-w-[600px] mx-auto">
       <img
         src={src}
         alt="Golden Floor Plan"

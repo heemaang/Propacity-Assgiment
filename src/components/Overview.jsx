@@ -3,7 +3,7 @@ import overviewImage from "../assets/overview.webp"; // replace with actual path
 
 const OverviewPage = () => {
   return (
-    <div className="bg-[#3c394b] text-white min-h-screen px-4 md:px-20 py-8">
+    <div id="overview" className="bg-[#3c394b] text-white min-h-screen px-4 md:px-20 py-8">
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-8">
         {/* Left Content */}
         <div className="flex-1">

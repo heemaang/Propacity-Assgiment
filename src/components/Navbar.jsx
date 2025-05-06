@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
-import Logo from '../assets/logo.svg'; // Update path as needed
+import Logo from '../assets/logo.svg';
 
-export default function Navbar() {
+export default function Navbar({ onEnquireClick, scrollToContactForm }) {
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
@@ -19,17 +19,14 @@ export default function Navbar() {
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between h-24 relative">
-        {/* Custom Shaped Logo - Larger and Partially Out of Navbar */}
         <div className="absolute -top-12 left-0 w-40 h-52 z-50">
           <div className="w-full h-full bg-white clip-polygon flex items-center justify-center shadow-lg">
             <img src={Logo} alt="Swarnim Logo" className="h-24 w-auto" />
           </div>
         </div>
 
-        {/* Spacer to offset logo */}
         <div className="w-44"></div>
 
-        {/* Navigation Links */}
         <div className="flex gap-12 text-sm font-semibold tracking-wide uppercase">
           {[
             ['#overview', 'Overview'],
@@ -37,25 +34,35 @@ export default function Navbar() {
             ['#location', 'Location'],
             ['#amenities', 'Amenities'],
             ['#floor-plans', 'Floor Plans'],
-            ['#brochure', 'Download Brochure']
-          ].map(([href, label]) => (
-            <a
-              key={label}
-              href={href}
-              className="relative text-white no-underline outline-none focus:outline-none hover:text-white transition duration-200"
-            >
-              <span className="pb-1 hover-underline">{label}</span>
-            </a>
-          ))}
+            ['#brochure', 'Download Brochure'],
+          ].map(([href, label]) => {
+            const isContactTrigger = label === 'Our Projects' || label === 'Download Brochure';
+            return (
+              <a
+                key={label}
+                href={isContactTrigger ? '#contact-form' : href}
+                onClick={(e) => {
+                  if (isContactTrigger) {
+                    e.preventDefault();
+                    scrollToContactForm();
+                  }
+                }}
+                className="relative text-white no-underline outline-none focus:outline-none hover:text-white transition duration-200"
+              >
+                <span className="pb-1 hover-underline">{label}</span>
+              </a>
+            );
+          })}
         </div>
 
-        {/* Enquire Button */}
-        <button className="bg-white text-black px-6 py-2 text-sm font-bold uppercase hover:bg-gray-200 transition outline-none">
+        <button
+          onClick={scrollToContactForm}
+          className="bg-white text-black px-6 py-2 text-sm font-bold uppercase hover:bg-gray-200 transition outline-none"
+        >
           Enquire Now
         </button>
       </div>
 
-      {/* Styles */}
       <style jsx>{`
         html {
           scroll-behavior: smooth;

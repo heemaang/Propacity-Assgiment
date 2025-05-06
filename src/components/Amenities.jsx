@@ -37,6 +37,7 @@ const AmenitiesSection = () => {
 
   return (
     <div
+      id="amenities"
       className="h-screen overflow-hidden relative"
       onWheel={(e) => {
         if (e.deltaY > 0) nextImage(); // Scroll down to next image
@@ -46,7 +47,7 @@ const AmenitiesSection = () => {
         className="flex flex-col"
         style={{
           transform: `translateY(-${currentIndex * 100}vh)`, // Move images up based on index
-          transition: "transform 1s ease", // Smooth transition for sliding effect
+          transition: "transform 1.5s ease-in-out", // Slower transition for smooth scrolling
         }}
       >
         {amenities.map((item, index) => (

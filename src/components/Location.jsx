@@ -3,7 +3,7 @@ import mapImage from "../assets/location.webp"; // Replace with actual map image
 
 const LocationPage = () => {
   return (
-    <div className="bg-white text-gray-800 px-8 md:px-24 py-16">
+    <div id="location" className="bg-white text-gray-800 px-8 md:px-24 py-16">
       {/* Header */}
       <div className="flex flex-col md:flex-row items-start gap-10">
         {/* Left Text Section */}

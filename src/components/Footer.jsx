@@ -8,7 +8,7 @@ import {
   
   export default function Footer() {
     return (
-      <footer className="bg-[#1a1a1a] text-gray-300 text-sm pt-12">
+      <footer id="footer" className="bg-[#1a1a1a] text-gray-300 text-sm pt-12">
         <div className="max-w-7xl mx-auto px-6">
           <div className="flex flex-col items-center mb-6">
             <h1 className="text-white text-2xl font-semibold tracking-widest mb-2">GANGA</h1>

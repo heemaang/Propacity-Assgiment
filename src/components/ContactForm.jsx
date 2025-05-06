@@ -24,7 +24,7 @@ export default function EnquiryForm() {
   };
 
   return (
-    <div className="min-h-screen bg-white py-20 px-4">
+    <div id="contact"className="min-h-screen bg-white py-20 px-4">
       <h1 className="text-5xl text-center font-serif mb-12">
         <span className="text-gray-500">Enquire</span>{' '}
         <span className="text-black font-medium">Now</span>
@@ -34,7 +34,7 @@ export default function EnquiryForm() {
         className="max-w-5xl mx-auto border border-gray-300 px-8 py-10 bg-white"
       >
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          <div>
+        <div>
             <label className="text-sm mb-2 block text-gray-600">
               First Name<span className="text-red-500">*</span>
             </label>
@@ -45,7 +45,7 @@ export default function EnquiryForm() {
               value={formData.firstName}
               onChange={handleChange}
               placeholder="Enter your first name"
-              className="w-full border-b border-gray-300 focus:border-black focus:outline-none py-1.5 placeholder-gray-400"
+              className="w-full border-b border-gray-300 focus:border-black focus:outline-none py-1.5"
             />
           </div>
           <div>
@@ -59,7 +59,7 @@ export default function EnquiryForm() {
               value={formData.lastName}
               onChange={handleChange}
               placeholder="Enter your last name"
-              className="w-full border-b border-gray-300 focus:border-black focus:outline-none py-1.5 placeholder-gray-400"
+              className="w-full border-b border-gray-300 focus:border-black focus:outline-none py-1.5"
             />
           </div>
           <div>
@@ -73,7 +73,7 @@ export default function EnquiryForm() {
               value={formData.phone}
               onChange={handleChange}
               placeholder="Enter your phone number"
-              className="w-full border-b border-gray-300 focus:border-black focus:outline-none py-1.5 placeholder-gray-400"
+              className="w-full border-b border-gray-300 focus:border-black focus:outline-none py-1.5 "
             />
           </div>
           <div>
@@ -87,7 +87,7 @@ export default function EnquiryForm() {
               value={formData.email}
               onChange={handleChange}
               placeholder="Enter your email address"
-              className="w-full border-b border-gray-300 focus:border-black focus:outline-none py-1.5 placeholder-gray-400"
+              className="w-full border-b border-gray-300 focus:border-black focus:outline-none py-1.5 "
             />
           </div>
         </div>
@@ -103,7 +103,7 @@ export default function EnquiryForm() {
             onChange={handleChange}
             rows="4"
             placeholder="Type your message here"
-            className="w-full border-b py-1.5 resize-none placeholder-gray-400"
+            className="w-full border-b py-1.5 resize-none "
           ></textarea>
         </div>
 

@@ -1,36 +1,37 @@
-import React from 'react';
+import React from "react";
 
 const EnquiryModal = ({ isOpen, onClose }) => {
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
-      <div className="relative bg-white w-full max-w-2xl p-8 rounded shadow-lg">
-        {/* Close Button Styled */}
+    <div className="fixed inset-0 z-50 flex items-center justify-center">
+      <div className="relative bg-white w-full max-w-lg h-[700px] p-8 border border-black rounded">
+
+        {/* Close Button */}
         <button
           onClick={onClose}
-          className="absolute top-4 right-4 w-8 h-8 border border-black text-black text-xl font-light flex items-center justify-center hover:bg-gray-100"
+          className="absolute top-4 right-4 w-10 h-10 text-black text-4xl font-light flex items-center justify-center bg-transparent border-none"
         >
           &times;
         </button>
 
-        <h2 className="text-2xl font-serif mb-6 text-center">
-          <span className="font-light">Enquire</span>{' '}
+        <h2 className="text-2xl font-serif mb-6 text-center text-black">
+          <span className="font-light">Enquire</span>{" "}
           <span className="font-bold">Now</span>
         </h2>
 
-        <form className="space-y-4">
+        <form className="space-y-4 text-black overflow-y-auto h-full">
           <div className="flex gap-4">
             <input
               type="text"
               placeholder="First Name*"
-              className="w-1/2 border-b border-gray-400 outline-none py-2"
+              className="w-1/2 border-b border-black outline-none py-2 bg-white"
               required
             />
             <input
               type="text"
               placeholder="Last Name*"
-              className="w-1/2 border-b border-gray-400 outline-none py-2"
+              className="w-1/2 border-b border-black outline-none py-2 bg-white"
               required
             />
           </div>
@@ -38,32 +39,32 @@ const EnquiryModal = ({ isOpen, onClose }) => {
             <input
               type="tel"
               placeholder="Phone Number*"
-              className="w-1/2 border-b border-gray-400 outline-none py-2"
+              className="w-1/2 border-b border-black outline-none py-2 bg-white"
               required
             />
             <input
               type="email"
               placeholder="Email Id*"
-              className="w-1/2 border-b border-gray-400 outline-none py-2"
+              className="w-1/2 border-b border-black outline-none py-2 bg-white"
               required
             />
           </div>
           <textarea
             placeholder="Message*"
-            className="w-full border-b border-gray-400 outline-none py-2 h-24"
+            className="w-full border-b border-black outline-none py-2 h-24 bg-white"
             required
           />
           <div className="flex items-center">
             {/* Dummy reCAPTCHA placeholder */}
-            <div className="border p-4 w-full max-w-sm">
+            <div className="border border-black p-4 w-full max-w-sm bg-white">
               <div className="flex items-center">
-                <input type="checkbox" className="mr-2" />
-                <span>I'm not a robot</span>
+                <input type="checkbox" className="w-3 h-5 mr-2" />
+                <span>I&apos;m not a robot</span>
               </div>
             </div>
           </div>
           <div className="flex items-center space-x-2">
-            <input type="checkbox" required />
+            <input type="checkbox" className="w-3 h-5" required />
             <label className="text-sm">
               I accept the privacy policy and terms of use
             </label>
