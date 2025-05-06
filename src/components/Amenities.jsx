@@ -1,0 +1,78 @@
+import React, { useState } from "react";
+
+const amenities = [
+  {
+    image: "src/assets/aminities1.webp",
+    title: "The Golden Ecosystem",
+  },
+  {
+    image: "src/assets/aminities2.webp",
+    title: "The Golden Landmark",
+  },
+  {
+    image: "src/assets/aminties3.webp",
+    title: "The Golden Drive",
+  },
+  {
+    image: "src/assets/aminities4.webp",
+    title: "The Golden Address",
+  },
+  {
+    image: "src/assets/aminities5.webp",
+    title: "The Golden Choice",
+  },
+  {
+    image: "src/assets/aminities6.webp",
+    title: "The Golden Destination",
+  },
+];
+
+const AmenitiesSection = () => {
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  // Function to handle scroll
+  const nextImage = () => {
+    setCurrentIndex((prevIndex) => (prevIndex + 1) % amenities.length);
+  };
+
+  return (
+    <div
+      className="h-screen overflow-hidden relative"
+      onWheel={(e) => {
+        if (e.deltaY > 0) nextImage(); // Scroll down to next image
+      }}
+    >
+      <div
+        className="flex flex-col"
+        style={{
+          transform: `translateY(-${currentIndex * 100}vh)`, // Move images up based on index
+          transition: "transform 1s ease", // Smooth transition for sliding effect
+        }}
+      >
+        {amenities.map((item, index) => (
+          <div
+            key={index}
+            className="w-full relative bg-cover bg-center"
+            style={{
+              backgroundImage: `url(${item.image})`,
+              minHeight: "100vh", // Ensure each image takes full screen height
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+            }}
+          >
+            <div className="absolute inset-0 bg-black/50 flex flex-col items-center justify-center text-center px-4">
+              <h2 className="text-white text-4xl md:text-5xl font-serif mb-4">
+                {item.title}
+              </h2>
+              <button className="mt-6 px-8 py-3 border text-white border-white hover:bg-white hover:text-black transition text-lg">
+                DISCOVER ME NOW
+              </button>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+};
+
+export default AmenitiesSection;
